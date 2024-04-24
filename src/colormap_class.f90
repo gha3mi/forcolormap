@@ -21,7 +21,7 @@
 ! SOFTWARE.
 !-------------------------------------------------------------------------------
 ! Contributed by vmagnin: 2023-09-26
-! Last modification: gha3mi 2024-02-16, vmagnin 2024-02-16
+! Last modification: gha3mi 2024-02-16, vmagnin 2024-03-06
 !-------------------------------------------------------------------------------
 
 
@@ -92,7 +92,7 @@ contains
         end if
 
         ! Check validity of the colormap and fix it if necessary
-        call self%check(check_name=.true., check_zmin=.true., check_zmax=.true., check_levels=.true.)
+        call self%check(check_name=.true., check_bounds=.true., check_levels=.true.)
 
         select case(self%name)
         ! Miscellaneous colormaps collection
@@ -586,7 +586,7 @@ contains
         end if
     end subroutine set
 
-    ! You can create a custom colormap:
+    !> You can create a custom colormap from a "map" array.
     pure subroutine create(self, name, zmin, zmax, map, reverse)
         class(Colormap), intent(inout) :: self
         character(*), intent(in) :: name
@@ -601,7 +601,7 @@ contains
         self%zmin   = zmin
         self%zmax   = zmax
 
-        call self%check(check_zmin=.true., check_zmax=.true., check_levels=.true.)
+        call self%check(check_bounds=.true., check_levels=.true.)
 
         ! Is the colormap reseted?
         if (allocated(self%map)) then
@@ -618,8 +618,7 @@ contains
         end if
     end subroutine
 
-
-    ! You can create a custom colormap:
+    !> You can create a custom colormap using Lagrange interpolation:
     pure subroutine create_lagrange(self, name, zmin, zmax, colors, levels, reverse)
         class(Colormap), intent(inout) :: self
         character(*), intent(in) :: name
@@ -635,7 +634,7 @@ contains
         self%zmin   = zmin
         self%zmax   = zmax
 
-        call self%check(check_zmin=.true., check_zmax=.true., check_levels=.true.)
+        call self%check(check_bounds=.true., check_levels=.true.)
 
         ! Is the colormap reseted?
         if (allocated(self%map)) then
@@ -652,7 +651,7 @@ contains
         end if
     end subroutine
 
-        ! You can create a custom colormap:
+    !> You can create a custom colormap using Bezier interpolation:
     pure subroutine create_bezier(self, name, zmin, zmax, colors, levels, reverse)
         class(Colormap), intent(inout) :: self
         character(*), intent(in) :: name
@@ -668,7 +667,7 @@ contains
         self%zmin   = zmin
         self%zmax   = zmax
 
-        call self%check(check_zmin=.true., check_zmax=.true., check_levels=.true.)
+        call self%check(check_bounds=.true., check_levels=.true.)
 
         ! Is the colormap reseted?
         if (allocated(self%map)) then
@@ -732,7 +731,7 @@ contains
             self%zmax   = zmax
             self%levels = n
 
-            call self%check(check_zmin=.true., check_zmax=.true.)
+            call self%check(check_bounds=.true.)
 
             ! Reverse the colormap if requested
             if (present(reverse)) then
@@ -1106,13 +1105,13 @@ contains
         end do
     end function lagrange_poly
 
-    ! Check validity of the colormap and fix it if necessary
-    pure subroutine check(self,check_name, check_zmin, check_zmax, check_levels)
+    !> Check validity of the colormap and fix it if necessary
+    pure subroutine check(self,check_name, check_bounds, check_levels)
         use forcolormap_info, only: Colormaps_info
 
         class(Colormap), intent(inout) :: self
         logical, dimension(4) :: status
-        logical, intent(in), optional :: check_name, check_zmin, check_zmax, check_levels
+        logical, intent(in), optional :: check_name, check_bounds, check_levels
         real(wp) :: temp
         type(Colormaps_info) :: cmap_info
         integer :: input_levels, i, levels
@@ -1177,15 +1176,14 @@ contains
             end if
         end if
 
-        if (present(check_zmin)) then
-            if (check_zmin) then
-
+        if (present(check_bounds)) then
+            if (check_bounds) then
                 ! Check validity of zmin and zmax
                 if (self%zmin > self%zmax) status(2) = .false.
 
                 ! Fix zmin and zmax if they are not valid
                 if (status(2) .eqv. .false.) then
-                    temp = self%zmin
+                    temp      = self%zmin
                     self%zmin = self%zmax
                     self%zmax = temp
                 end if

@@ -30,7 +30,7 @@ Seyed Ali Ghasemi" >
     <div class="container-fluid mb-sm-4 mb-xl-2">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">ForColormap <small>0.8.0</small></a>
+          <a class="navbar-brand" href="../index.html">ForColormap <small>0.9.0</small></a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
                   aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
@@ -77,8 +77,7 @@ Seyed Ali Ghasemi" >
             <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> <a rel="license" href="https://opensource.org/licenses/MIT">MIT</a></li>
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip"
-                 data-bs-placement="bottom" data-html="true"
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                  title="<p>48.0% of total for derived types.</p>Including implementation: 851 statements, 53.0% of total for derived types.">24 statements</a>
             </li>
 
@@ -119,8 +118,8 @@ Seyed Ali Ghasemi" >
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/colormap.html#variable-levels~9">levels</a>
-            <a class="list-group-item" href="../type/colormap.html#variable-map~6">map</a>
+            <a class="list-group-item" href="../type/colormap.html#variable-levels~5">levels</a>
+            <a class="list-group-item" href="../type/colormap.html#variable-map">map</a>
             <a class="list-group-item" href="../type/colormap.html#variable-name~5">name</a>
             <a class="list-group-item" href="../type/colormap.html#variable-zmax">zmax</a>
             <a class="list-group-item" href="../type/colormap.html#variable-zmin">zmin</a>
@@ -186,7 +185,7 @@ Seyed Ali Ghasemi" >
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>
+      <h2 id="type-def-statement">
         type, public :: Colormap</h2>
     
     <br>
@@ -205,7 +204,7 @@ Seyed Ali Ghasemi" >
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-levels~9"></span>
+              <span class="anchor" id="variable-levels~5"></span>
               integer,
             </td>
               <td>private</td>
@@ -222,7 +221,7 @@ Seyed Ali Ghasemi" >
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-map~6"></span>
+              <span class="anchor" id="variable-map"></span>
               integer,
             </td>
               <td>private,</td>
@@ -543,7 +542,7 @@ Seyed Ali Ghasemi" >
 </h3>
     
 
-  
+  <p>You can create a custom colormap from a "map" array.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -672,7 +671,7 @@ Seyed Ali Ghasemi" >
 </h3>
     
 
-  
+  <p>You can create a custom colormap using Bezier interpolation:</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -816,7 +815,7 @@ Seyed Ali Ghasemi" >
 </h3>
     
 
-  
+  <p>You can create a custom colormap using Lagrange interpolation:</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1885,11 +1884,11 @@ Seyed Ali Ghasemi" >
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/check.html'>check</a>(self, check_name, check_zmin, check_zmax, check_levels)  
+    private pure subroutine <a href='../proc/check.html'>check</a>(self, check_name, check_bounds, check_levels)  
 </h3>
     
 
-  
+  <p>Check validity of the colormap and fix it if necessary</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1942,22 +1941,7 @@ Seyed Ali Ghasemi" >
               
             </td>
             <td>::</td>
-            <td><strong>check_zmin</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              logical,
-            </td>
-<td>intent(in),</td>
-              <td>optional</td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>check_zmax</strong></td>
+            <td><strong>check_bounds</strong></td>
             <td>
 
             </td>
@@ -2027,15 +2011,18 @@ Seyed Ali Ghasemi" >
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForColormap was developed by Vincent Magnin,
-Seyed Ali Ghasemi<br>&copy; 2023-2024 <a rel="license" href="https://opensource.org/licenses/MIT">MIT</a>
+          <div class="col">
+            <p>
+              ForColormap
+ was developed by Vincent Magnin,
+Seyed Ali Ghasemi<br>              &copy; 2023-2024 <a rel="license" href="https://opensource.org/licenses/MIT">MIT</a>
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-01T12:05:57.059721             </p>
+ on 2024-04-24T06:58:42.810957             </p>
           </div>
         </div>
         <br>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +30,7 @@ Seyed Ali Ghasemi" >
     <div class="container-fluid mb-sm-4 mb-xl-2">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="./index.html">ForColormap <small>0.8.0</small></a>
+          <a class="navbar-brand" href="./index.html">ForColormap <small>0.9.0</small></a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
                   aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
@@ -63,27 +65,31 @@ Seyed Ali Ghasemi" >
     </div>
 
     <div class="container">
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="p-5 mb-4 bg-light border rounded-3" id="jumbotron">
-        <p>A Fortran library for colormaps</p>
-	<p> Find us on&hellip;</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="https://github.com/vmagnin/forcolormap" role="button">GitHub</a>
-        </p>
-      </div>
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="p-5 mb-4 bg-light border rounded-3" id="jumbotron">
+      <p>A Fortran library for colormaps</p>
+        <p> Find us on&hellip;</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="https://github.com/vmagnin/forcolormap" role="button">GitHub</a>
+        
+        
+        
+        
+      </p>
+    </div>
 
       <div class="row" id='text'>
         <div class=col-md-8>
           <h1>ForColormap</h1>
-          <p><img alt="Logo ForColormap" src="logo/logo_forcolormap-roma_8.svg"></p>
-<h1>ForColormap</h1>
-<p>This Fortran library is independent of any graphical toolkit: its main functionality is to convert a real value to RGB values that you can use with any drawing toolkit. It offers various methods and options to manage colormaps. It includes:</p>
+          <p><img alt="" src="logo/logo_forcolormap-roma_8.svg"></p>
+<p>The ForColormap Fortran library is independent of any graphical toolkit: its main functionality is to convert a real value to RGB values that you can use with any drawing toolkit. It includes:</p>
 <ul>
-<li>the 222 colormaps of the <em>Scientific colour maps</em> collection v8.0.1 by Fabio Crameri. See Fabio Crameri's poster <a href="https://www.fabiocrameri.ch/ws/media-library/a17d02961b3a4544961416de2d7900a4/posterscientificcolourmaps_crameri.pdf">"Scientific Colour Maps"</a> for more information and my <a href="NO_BIJECTION.md">No Bijection!</a> text about the mysteries and wonders of colors,</li>
+<li>the 222 colormaps of the <em>Scientific colour maps</em> collection v8.0.1 by Fabio Crameri. See Fabio Crameri's poster <a href="https://www.fabiocrameri.ch/ws/media-library/a17d02961b3a4544961416de2d7900a4/posterscientificcolourmaps_crameri.pdf">"Scientific Colour Maps"</a> for more information,</li>
 <li>the "magma", "inferno","plasma", "viridis" <a href="https://bids.github.io/colormap/">matplotlib colormaps</a>,</li>
 <li>the Dave Green's <a href="https://people.phy.cam.ac.uk/dag9/CUBEHELIX/">cubehelix</a> colormap,</li>
 <li>a few basic colormaps: "black_body", "fire", "rainbow", "inv_rainbow", "zebra".</li>
 </ul>
+<p>And it offers various methods and options to manage colormaps. </p>
 <h2>Basic usage</h2>
 <p>Assuming your graphical library has a <code>setpixelgb()</code>-like function and you know your <code>z</code> values will be for example in the [0, 2] range, you can write something like:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">forcolormap</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">Colormap</span><span class="p">,</span><span class="w"> </span><span class="n">wp</span>
@@ -100,15 +106,17 @@ Seyed Ali Ghasemi" >
 <span class="k">call </span><span class="n">setpixelrgb</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">)</span>
 </code></pre></div>
 
-<p>The library is using the precision <code>wp=&gt;real64</code> defined in the module <code>iso_fortran_env</code>. And depending on the integers expected by your graphical library, you may need to convert the kinds of red, green, blue variables by writing for example <code>int(red, kind=int16)</code> if you need 16 bit integers.</p>
-<p>This <a href="https://s-ink.org/colour-map-guideline">guideline</a> can help you choose the right kind of colormap. And you can visually choose the available colormaps in the <a href="https://github.com/vmagnin/forcolormap/blob/main/colormaps_list/ForColormap.pdf">colormaps_list/ForColormap.pdf</a> manual or on this page (under development): https://github.com/gha3mi/forcolormap/tree/dev</p>
+<p>The library is using the precision <code>wp=&gt;real64</code> defined in the module <code>iso_fortran_env</code>. And depending on the integers expected by your graphical library, you may need to convert the kinds of red, green, blue variables.</p>
+<p>This <a href="https://s-ink.org/colour-map-guideline">guideline</a> can help you choose the right kind of colormap. And you can visually choose the available colormaps in the <a href="https://github.com/vmagnin/forcolormap/blob/main/colormaps_list/ForColormap.pdf">colormaps_list/ForColormap.pdf</a> manual or on this page (under development): <a href="https://github.com/gha3mi/forcolormap/tree/dev">https://github.com/gha3mi/forcolormap/tree/dev</a></p>
 <h2>Installation</h2>
 <h3>Requirements</h3>
 <p>You need, whatever your operating system:</p>
 <ul>
 <li>a modern Fortran compiler, for example GFortran or the Intel ifort/ifx compilers. See the <a href="https://fortran-lang.org/compilers/">Fortran-lang.org compilers page</a> for other compilers.</li>
-<li>The Fortran Package Manager <a href="https://fpm.fortran-lang.org/">fpm</a> or CMake (&gt;=3.24) &amp; pkg-config for building the project.</li>
+<li>The Fortran Package Manager <a href="https://fpm.fortran-lang.org/">fpm</a> or CMake (&gt;=3.24) &amp; pkg-config for building the project.<ul>
 <li>For writing PPM files, the library <a href="https://github.com/gha3mi/forimage">ForImage</a> is used as a fpm or CMake dependency (automatically downloaded).</li>
+</ul>
+</li>
 </ul>
 <h3>Testing the project with fpm</h3>
 <p>If you have a GitHub account, just clone the repository. Then launch the demo example, which is creating <a href="https://en.wikipedia.org/wiki/Netpbm#File_formats">PPM files</a> with colormaps and colorbars for all the available colormaps:</p>
@@ -120,7 +128,7 @@ $<span class="w"> </span>fpm<span class="w"> </span>run<span class="w"> </span>-
 <h3>Using ForColormap as a fpm dependency</h3>
 <p>To use ForColormap within your own <code>fpm</code> project, add the following lines to your <code>fpm.toml</code> manifest file:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span>
-<span class="n">forcolormap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/vmagnin/forcolormap.git&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">forcolormap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/vmagnin/forcolormap.git&quot;</span><span class="p">}</span>
 </code></pre></div>
 
 <h3>Using CMake</h3>
@@ -138,7 +146,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gfortran<span class="w"> </span>-static<span class="w"> </span>my_program.f90<span class="w"> </span><span class="k">$(</span>pkg-config<span class="w"> </span>--cflags<span class="w"> </span>--libs<span class="w"> </span>forcolormap<span class="w"> </span>forimage<span class="k">)</span>
 </code></pre></div>
 
-<p>Note that ForColormap is depending on ForImage, and for linking you must respect that order.</p>
+<p>Note that ForColormap is depending on ForImage, and for static linking you must respect that order.</p>
 <h4>Dynamic linking</h4>
 <p>There is a CMake option to obtain a shared library:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>cmake<span class="w"> </span>-D<span class="w"> </span><span class="nv">BUILD_SHARED_LIBS</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>..
@@ -148,7 +156,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gfortran<span class="w"> </span>my_program.f90<span class="w"> </span><span class="k">$(</span>pkg-config<span class="w"> </span>--cflags<span class="w"> </span>--libs<span class="w"> </span>forcolormap<span class="k">)</span>
 </code></pre></div>
 
-<p>If you encounter linking problems, you should verify the content of your <code>PKG_CONFIG_PATH</code> and <code>LD_LIBRARY_PATH</code> environment variables. For example, in Ubuntu the <code>.pc</code> files will be installed in <code>/usr/local/lib/pkgconfig/</code> and the libraries in <code>/usr/local/lib/</code>.</p>
+<p>If you encounter linking problems, you should verify the content of your <code>PKG_CONFIG_PATH</code> and <code>LD_LIBRARY_PATH</code> environment variables. For example, in Ubuntu or FreeBSD the <code>.pc</code> files will be installed in <code>/usr/local/lib/pkgconfig/</code> and the libraries in <code>/usr/local/lib/</code>.</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/local/lib/pkgconfig/
+</code></pre></div>
+
 <h4>Building examples and tests</h4>
 <p>You can build the examples with:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>cmake<span class="w"> </span>-D<span class="w"> </span><span class="nv">BUILD_FORCOLORMAP_EXAMPLES</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>..
@@ -183,53 +194,65 @@ $<span class="w"> </span>ctest
 <li><code>modify.f90</code> demonstrates how you can modify a colormap with methods like <code>shift()</code>, in concrete cases.</li>
 </ul>
 <p>They can be launched with the command <code>fpm run --example name_of_the_example</code> (without the <code>.f90</code> extension).</p>
+<p>In the gtk-fortran-extra repository, you will also find a <a href="https://github.com/vmagnin/gtk-fortran-extra/tree/main/reaction_diffusion">physical model</a> demonstrating the use of ForColormap. It creates a movie with Turing patterns, displayed with various colormaps:</p>
+<p><a href="https://www.youtube.com/watch?v=cVHLCVVvZ4U">https://www.youtube.com/watch?v=cVHLCVVvZ4U</a></p>
 <h2>Licenses</h2>
 <p>This project is under MIT license. The logo files are under <a href="https://creativecommons.org/licenses/by-sa/4.0/">license CC BY-SA 4.0</a>.</p>
 <h2>Citing colormaps</h2>
 <p>As any work, a colormap should be cited:</p>
 <ul>
-<li>For <em>Scientific colour maps,</em> please cite these two items:</li>
-<li>Crameri, F. (2018a), Scientific colour maps. <em>Zenodo.</em> http://doi.org/10.5281/zenodo.1243862</li>
-<li>Crameri, Fabio, Grace E. Shephard, and Philip J. Heron. “The Misuse of Colour in Science Communication.” <em>Nature Communications</em> 11, no. 1 (October 28, 2020): 5444. https://doi.org/10.1038/s41467-020-19160-7.</li>
-<li>For the matplotlib colormaps, you can cite this webpage https://bids.github.io/colormap/</li>
-<li>For the <em>cubehelix</em> colormap, please cite:</li>
-<li>Green, D. A. “A Colour Scheme for the Display of Astronomical Intensity Images.” <em>arXiv,</em> August 30, 2011. http://arxiv.org/abs/1108.5083.</li>
+<li>For <em>Scientific colour maps,</em> please cite these two items:<ul>
+<li>Crameri, F. (2018a), Scientific colour maps. <em>Zenodo.</em> <a href="http://doi.org/10.5281/zenodo.1243862">http://doi.org/10.5281/zenodo.1243862</a></li>
+<li>Crameri, Fabio, Grace E. Shephard, and Philip J. Heron. “The Misuse of Colour in Science Communication.” <em>Nature Communications</em> 11, no. 1 (October 28, 2020): 5444. <a href="https://doi.org/10.1038/s41467-020-19160-7">https://doi.org/10.1038/s41467-020-19160-7</a>.</li>
+</ul>
+</li>
+<li>For the matplotlib colormaps, you can cite this webpage <a href="https://bids.github.io/colormap/">https://bids.github.io/colormap/</a></li>
+<li>For the <em>cubehelix</em> colormap, please cite:<ul>
+<li>Green, D. A. “A Colour Scheme for the Display of Astronomical Intensity Images.” <em>arXiv,</em> August 30, 2011. <a href="http://arxiv.org/abs/1108.5083">http://arxiv.org/abs/1108.5083</a>.</li>
+</ul>
+</li>
 </ul>
 <h2>References</h2>
 <h3>Articles and books</h3>
 <ul>
-<li>Nuñez, Jamie R., Christopher R. Anderton, and Ryan S. Renslow. “Optimizing Colormaps with Consideration for Color Vision Deficiency to Enable Accurate Interpretation of Scientific Data.” Edited by Jesús Malo. <em>PLOS ONE</em> 13, no. 7, August 1, 2018, e0199239. https://doi.org/10.1371/journal.pone.0199239.</li>
+<li>Nuñez, Jamie R., Christopher R. Anderton, and Ryan S. Renslow. “Optimizing Colormaps with Consideration for Color Vision Deficiency to Enable Accurate Interpretation of Scientific Data.” Edited by Jesús Malo. <em>PLOS ONE</em> 13, no. 7, August 1, 2018, e0199239. <a href="https://doi.org/10.1371/journal.pone.0199239">https://doi.org/10.1371/journal.pone.0199239</a>.</li>
 <li>Rogowitz, Bernice E, and Lloyd A Treinish. <a href="https://github.com/amadeusine/interesting-reads/blob/master/ibm-research__why-should-engineers-and-scientists-be-worried-about-color.pdf">“Why Should Engineers and Scientists Be Worried About Color?”</a></li>
-<li>Thyng, Kristen, Chad Greene, Robert Hetland, Heather Zimmerle, and Steven DiMarco. “True Colors of Oceanography: Guidelines for Effective and Accurate Colormap Selection.” <em>Oceanography</em> 29, no. 3, September 1, 2016, pp. 9–13. https://doi.org/10.5670/oceanog.2016.66.</li>
+<li>Thyng, Kristen, Chad Greene, Robert Hetland, Heather Zimmerle, and Steven DiMarco. “True Colors of Oceanography: Guidelines for Effective and Accurate Colormap Selection.” <em>Oceanography</em> 29, no. 3, September 1, 2016, pp. 9–13. <a href="https://doi.org/10.5670/oceanog.2016.66">https://doi.org/10.5670/oceanog.2016.66</a>.</li>
 <li>Valeur, Bernard. <em>La couleur dans tous ses éclats.</em> Bibliothèque scientifique. Paris: Belin-"Pour la science", 2011, ISBN 9782701158761.</li>
 <li>Valeur, Bernard. <em>Lumière et luminescence - Ces phénomènes lumineux qui nous entourent.</em> Bibliothèque scientifique. Paris: Belin-"Pour la science", 2005, ISBN 9782701136035.</li>
 </ul>
 <h3>Web pages</h3>
 <h4>About colormaps</h4>
 <ul>
-<li>https://en.wikipedia.org/wiki/Color_gradient</li>
-<li>https://en.wikipedia.org/wiki/Heat_map</li>
+<li><a href="NO_BIJECTION.md">No Bijection!</a>: a passionate text about the mysteries and wonders of colors.</li>
+<li><a href="https://en.wikipedia.org/wiki/Color_gradient">https://en.wikipedia.org/wiki/Color_gradient</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Heat_map">https://en.wikipedia.org/wiki/Heat_map</a></li>
 <li>Ken Hughes, <a href="https://brushingupscience.com/2019/10/01/default-colormaps-are-parula-and-viridis-really-an-improvement-over-jet/">"Default colormaps: Are Parula and Viridis really an improvement over Jet?"</a>, posted on October 1, 2019.</li>
-<li>"In Search of a Perfect Colormap", http://inversed.ru/Blog_2.htm</li>
+<li><a href="http://inversed.ru/Blog_2.htm">In Search of a Perfect Colormap</a></li>
+<li>The <a href="https://data.europa.eu/apps/data-visualisation-guide/tag/colour">Data Visualisation Guide section about colours</a></li>
 </ul>
 <h4>Specific colormaps</h4>
 <ul>
-<li>Cubehelix (Dave Green, public domain): https://people.phy.cam.ac.uk/dag9/CUBEHELIX/</li>
-<li>Scientific colour maps (Fabio Crameri, MIT license):</li>
-<li>https://www.fabiocrameri.ch/colourmaps/</li>
-<li>https://s-ink.org/colour-map-guideline</li>
-<li>https://s-ink.org/scientific-colour-maps</li>
-<li>Seminar talk by Fabio Crameri about the scientific use of colour in science communication for the University of Oslo GeoHyd seminar: https://www.youtube.com/watch?v=iDPzWARbFrs</li>
-<li>Matplotlib colormaps (CC0 license / public domain):</li>
-<li>Stéfan van der Walt and Nathaniel Smith: https://bids.github.io/colormap/</li>
-<li>Python version: https://github.com/BIDS/colormap/blob/master/colormaps.py</li>
-<li>Nathaniel Smith and Stéfan van der Walt, <em>A Better Default Colormap for Matplotlib,</em> SciPy 2015:  https://www.youtube.com/watch?v=xAoljeRJ3lU</li>
+<li>Cubehelix (Dave Green, public domain): <a href="https://people.phy.cam.ac.uk/dag9/CUBEHELIX/">https://people.phy.cam.ac.uk/dag9/CUBEHELIX/</a></li>
+<li>Scientific colour maps (Fabio Crameri, MIT license):<ul>
+<li><a href="https://www.fabiocrameri.ch/colourmaps/">https://www.fabiocrameri.ch/colourmaps/</a></li>
+<li><a href="https://s-ink.org/colour-map-guideline">https://s-ink.org/colour-map-guideline</a></li>
+<li><a href="https://s-ink.org/scientific-colour-maps">https://s-ink.org/scientific-colour-maps</a></li>
+<li>Seminar talk by Fabio Crameri about the scientific use of colour in science communication for the University of Oslo GeoHyd seminar: <a href="https://www.youtube.com/watch?v=iDPzWARbFrs">https://www.youtube.com/watch?v=iDPzWARbFrs</a></li>
+</ul>
+</li>
+<li>Matplotlib colormaps (CC0 license / public domain):<ul>
+<li>Stéfan van der Walt and Nathaniel Smith: <a href="https://bids.github.io/colormap/">https://bids.github.io/colormap/</a></li>
+<li>Python version: <a href="https://github.com/BIDS/colormap/blob/master/colormaps.py">https://github.com/BIDS/colormap/blob/master/colormaps.py</a></li>
+<li>Nathaniel Smith and Stéfan van der Walt, <em>A Better Default Colormap for Matplotlib,</em> SciPy 2015:  <a href="https://www.youtube.com/watch?v=xAoljeRJ3lU">https://www.youtube.com/watch?v=xAoljeRJ3lU</a></li>
+</ul>
+</li>
 <li>Black Body colormap (CC0 license / public domain) by Kenneth Moreland: <a href="https://www.kennethmoreland.com/color-advice/">"Color Map Advice for Scientific Visualization"</a>.</li>
 <li><a href="https://medialab.github.io/iwanthue/">Colors for data scientists. Generate and refine palettes of optimally distinct colors.</a></li>
 </ul>
         </div>
           <div class="col-md-4">
-	        <div class="card card-body bg-light">
+            <div class="card card-body bg-light">
               <h2 class="card-title">Developer Info</h2>
               <h4 class="card-text">Vincent Magnin,
 Seyed Ali Ghasemi</h4>
@@ -289,15 +312,18 @@ Seyed Ali Ghasemi</h4>
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForColormap was developed by Vincent Magnin,
-Seyed Ali Ghasemi<br>&copy; 2023-2024 <a rel="license" href="https://opensource.org/licenses/MIT">MIT</a>
+          <div class="col">
+            <p>
+              ForColormap
+ was developed by Vincent Magnin,
+Seyed Ali Ghasemi<br>              &copy; 2023-2024 <a rel="license" href="https://opensource.org/licenses/MIT">MIT</a>
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-01T12:05:57.059721             </p>
+ on 2024-04-24T06:58:42.810957             </p>
           </div>
         </div>
         <br>
