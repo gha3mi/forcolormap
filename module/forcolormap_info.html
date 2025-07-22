@@ -13,14 +13,29 @@ Seyed Ali Ghasemi" >
 
     <title>forcolormap_info &ndash; ForColormap</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -78,7 +93,7 @@ Seyed Ali Ghasemi" >
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="37.4% of total for modules and submodules.">777 statements</a>
+                 title="37.3% of total for modules and submodules.">777 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -98,9 +113,11 @@ Seyed Ali Ghasemi" >
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -140,8 +157,8 @@ Seyed Ali Ghasemi" >
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/forcolormap_info.html#proc-findcolumnintersections">findColumnIntersections</a>
-            <a class="list-group-item" href="../module/forcolormap_info.html#proc-get_levels">get_levels</a>
-            <a class="list-group-item" href="../module/forcolormap_info.html#proc-get_name">get_name</a>
+            <a class="list-group-item" href="../module/forcolormap_info.html#proc-get_levels~2">get_levels</a>
+            <a class="list-group-item" href="../module/forcolormap_info.html#proc-get_name~2">get_name</a>
             <a class="list-group-item" href="../module/forcolormap_info.html#proc-get_ncolormaps">get_ncolormaps</a>
         </div>
       </div>
@@ -178,7 +195,7 @@ Seyed Ali Ghasemi" >
     </div>
 
     <div class="col-md-9" id='text'>
-      
+      <p>The Colormaps_info class offers information about each colormap.</p>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -480,7 +497,7 @@ large graphs.</div>
       </h3>
     </div>
     <div class="card-body">
-      
+      <p>Define a derived type named 'Colormaps_info' to store an array of 'table' type</p>
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
@@ -507,7 +524,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Array of 'table' type to store multiple colormaps</p>
             </td>
         </tr>
     </tbody>
@@ -521,33 +538,33 @@ large graphs.</div>
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/colormaps_info.html#boundprocedure-finalize~2'>finalize</a></strong> => <a href='/home/runner/work/forcolormap/forcolormap/doc/proc/deallocate_colormaps_info.html'>deallocate_Colormaps_info</a></td>
-                <td></td>
+  <strong><a href='../type/colormaps_info.html#boundprocedure-finalize~3'>finalize</a></strong> => <a href='/home/runner/work/forcolormap/forcolormap/doc/proc/deallocate_colormaps_info.html'>deallocate_Colormaps_info</a></td>
+                  <td><p>Procedure to finalize the derived type</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/colormaps_info.html#boundprocedure-get_levels'>get_levels</a></strong></td>
-                <td></td>
+  <strong><a href='../type/colormaps_info.html#boundprocedure-get_levels~2'>get_levels</a></strong></td>
+                  <td><p>Procedure to get the number of levels in a colormap</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/colormaps_info.html#boundprocedure-get_name'>get_name</a></strong></td>
-                <td></td>
+  <strong><a href='../type/colormaps_info.html#boundprocedure-get_name~2'>get_name</a></strong></td>
+                  <td><p>Procedure to get the name of a colormap</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/colormaps_info.html#boundprocedure-get_ncolormaps'>get_ncolormaps</a></strong></td>
-                <td></td>
+                  <td><p>Procedure to get the number of colormaps</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/colormaps_info.html#boundprocedure-set_all'>set_all</a></strong></td>
-                <td></td>
+                  <td><p>Procedure to set information for all colormaps in the array</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/colormaps_info.html#boundprocedure-write'>write</a></strong></td>
-                <td></td>
+                  <td><p>Procedure to filter and write information about the colormaps</p></td>
               </tr>
           </tbody>
         </table>
@@ -564,7 +581,7 @@ large graphs.</div>
       </h3>
     </div>
     <div class="card-body">
-      
+      <p>Define a derived type named 'table' to store information about a colormap</p>
 
         <h4>Components</h4>
           <table class="table table-striped varlist">
@@ -591,12 +608,12 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Author of the colormap</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-colorbar"></span>
+              <span class="anchor" id="variable-colorbar~2"></span>
               character(len=:),
             </td>
               <td>private,</td>
@@ -608,7 +625,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Colorbar style associated with the colormap</p>
             </td>
         </tr>
         <tr>
@@ -625,7 +642,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Family or category of the colormap</p>
             </td>
         </tr>
         <tr>
@@ -642,12 +659,12 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Type of gradient used in the colormap</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-levels"></span>
+              <span class="anchor" id="variable-levels~13"></span>
               integer,
             </td>
               <td>private</td>
@@ -659,7 +676,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Number of discrete levels in the colormap</p>
             </td>
         </tr>
         <tr>
@@ -676,12 +693,12 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>License information for the colormap</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-name"></span>
+              <span class="anchor" id="variable-name~9"></span>
               character(len=:),
             </td>
               <td>private,</td>
@@ -693,7 +710,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Name of the colormap</p>
             </td>
         </tr>
         <tr>
@@ -710,7 +727,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Package or library associated with the colormap</p>
             </td>
         </tr>
         <tr>
@@ -727,7 +744,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>Palette used in the colormap</p>
             </td>
         </tr>
         <tr>
@@ -744,7 +761,7 @@ large graphs.</div>
                 <td></td>
                 <td></td>
             <td>
-
+<p>URL or web link to the colormap information</p>
             </td>
         </tr>
     </tbody>
@@ -758,18 +775,18 @@ large graphs.</div>
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/table.html#boundprocedure-finalize'>finalize</a></strong> => <a href='/home/runner/work/forcolormap/forcolormap/doc/proc/deallocate_table.html'>deallocate_table</a></td>
-                <td></td>
+  <strong><a href='../type/table.html#boundprocedure-finalize~2'>finalize</a></strong> => <a href='/home/runner/work/forcolormap/forcolormap/doc/proc/deallocate_table.html'>deallocate_table</a></td>
+                  <td><p>Procedure to finalize the derived type</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/table.html#boundprocedure-set_info'>set_info</a></strong></td>
-                <td></td>
+                  <td><p>Procedure to set information for the colormap</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/table.html#boundprocedure-write_info'>write_info</a></strong></td>
-                <td></td>
+                  <td><p>Procedure to print information about the colormap</p></td>
               </tr>
           </tbody>
         </table>
@@ -786,7 +803,7 @@ large graphs.</div>
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Finds intersections between elements of the first column and other columns in the input array.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -801,7 +818,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-array"></span>
+              <span class="anchor" id="variable-array~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -827,7 +844,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_levels"></span> <h3>private pure function <a href='../proc/get_levels.html'>get_levels</a>(this, index) result(levels)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_levels~2"></span> <h3>private pure function <a href='../proc/get_levels~2.html'>get_levels</a>(this, index) result(levels)  
 </h3></div>
     <div class="card-body">
           
@@ -887,7 +904,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_name"></span> <h3>private pure elemental function <a href='../proc/get_name.html'>get_name</a>(this, index) result(name)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_name~2"></span> <h3>private pure elemental function <a href='../proc/get_name~2.html'>get_name</a>(this, index) result(name)  
 </h3></div>
     <div class="card-body">
           
@@ -1081,7 +1098,7 @@ large graphs.</div>
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Set information for all colormaps.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1121,7 +1138,7 @@ large graphs.</div>
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Set information about the colormap</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1181,7 +1198,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~3"></span>
+              <span class="anchor" id="variable-name~11"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1271,7 +1288,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-colorbar~2"></span>
+              <span class="anchor" id="variable-colorbar~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1286,7 +1303,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-levels~3"></span>
+              <span class="anchor" id="variable-levels~15"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1311,7 +1328,7 @@ large graphs.</div>
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Filter the array of colormaps based on the given criteria and write information about the filtered colormaps</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1356,7 +1373,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~4"></span>
+              <span class="anchor" id="variable-name~12"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -1446,7 +1463,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-levels~4"></span>
+              <span class="anchor" id="variable-levels~16"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -1486,7 +1503,7 @@ large graphs.</div>
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Print information about the colormap</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1575,33 +1592,11 @@ Seyed Ali Ghasemi<br>              &copy; 2023-2024 <a rel="license" href="https
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-04-24T06:58:42.810957             </p>
+ on 2025-07-22T12:03:34.092187+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

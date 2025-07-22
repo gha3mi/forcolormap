@@ -21,9 +21,10 @@
 ! SOFTWARE.
 !-------------------------------------------------------------------------------
 ! Contributed by vmagnin: 2023-09-26
-! Last modifications: gha3mi 2024-01-06, vmagnin 2024-02-16
+! Last modifications: gha3mi 2024-01-06, vmagnin 2024-05-09
 !-------------------------------------------------------------------------------
 
+!> This module contains miscellaneous colormaps, especially black body andf cubehelix.
 module miscellaneous_colormaps
     use colormap_parameters, only: colormap_name_length, wp, pi
     implicit none
@@ -32,7 +33,7 @@ module miscellaneous_colormaps
     public :: fire_colormap, rainbow_colormap, &
               inv_rainbow_colormap, zebra_colormap, cubehelix_colormap
 
-    character(*), dimension(*), parameter, public :: miscellaneous_colormaps_list = &
+    character(*), dimension(6), parameter, public :: miscellaneous_colormaps_list = &
         [character(colormap_name_length) :: &
         "fire", "rainbow", "inv_rainbow", "zebra", "cubehelix", &
         "black_body"]
@@ -361,12 +362,12 @@ module miscellaneous_colormaps
     end subroutine zebra_colormap
 
     !---------------------------------------------------------------------
-    ! This subroutine is based on the public domain FORTRAN 77 subroutine
-    ! published by D.A. Green:
-    !   Green, D. A., 2011, Bulletin of the Astronomical Society of India,
-    !      Vol.39, p.289
-    ! For more information on the parameters of cubehelix, see his page:
-    ! https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/
+    !> This subroutine is based on the public domain FORTRAN 77 subroutine
+    !> published by D.A. Green:
+    !>   Green, D. A., 2011, Bulletin of the Astronomical Society of India,
+    !>      Vol.39, p.289
+    !> For more information on the parameters of cubehelix, see his page:
+    !> https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/
     !---------------------------------------------------------------------
     pure subroutine cubehelix_colormap(map, nlev, varargs)
         integer, dimension(:,:), allocatable, intent(out) :: map

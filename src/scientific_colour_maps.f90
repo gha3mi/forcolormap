@@ -22,12 +22,14 @@
 ! SOFTWARE.
 !-------------------------------------------------------------------------------
 
+!> This module contains the 222 colormaps of the *Scientific colour maps*
+!> collection v8.0.1 by Fabio Crameri.
 module scientific_colour_maps
     use colormap_parameters, only: colormap_name_length
     implicit none
     private
 
-    character(*), dimension(*), parameter, public :: scientific_colour_maps_list = &
+    character(*), dimension(222), parameter, public :: scientific_colour_maps_list = &
         [character(colormap_name_length) :: &
         "acton", "acton10", "acton100", "acton25", "acton50", "actonS", &
         "bam", "bam10", "bam100", "bam25", "bam50", "bamako", &
